@@ -1,0 +1,9 @@
+.husky
+.vscode
+coverage
+dist
+documentation
+node_modules
+public
+jest.config.ts
+test.ts
