@@ -6,9 +6,11 @@ import {
   Repository,
 } from "typeorm";
 
+import { env } from "@main/config/env";
 import { DbTransaction } from "@application/contracts";
 
 import { ConnectionNotFoundError, TrasanctionNotFoundError } from "./errors";
+import { PgUser, PgSession } from "../entities";
 
 export class PgConnection implements DbTransaction {
   private static instance?: PgConnection;
@@ -23,7 +25,19 @@ export class PgConnection implements DbTransaction {
   }
 
   async connect(): Promise<void> {
-    this.connection = await this.connection?.initialize();
+    this.connection = new DataSource({
+      type: env.typeorm_connection,
+      host: env.typeorm_host,
+      port: env.typeorm_port,
+      username: env.typeorm_username,
+      password: env.typeorm_password,
+      database: env.typeorm_database,
+      synchronize: env.typeorm_synchronize,
+      logging: false,
+      entities: [PgUser, PgSession],
+    });
+
+    await this.connection.initialize();
   }
 
   async desconnect(): Promise<void> {

@@ -1,5 +1,5 @@
 import { HttpResponse, ok, serverError } from "@application/helpers/http";
-import { CreateUserUseCase } from "@domain/use-cases/create-user";
+import { CreateUserUseCase } from "@data/use-cases/user";
 
 import { Controller } from "./controller";
 

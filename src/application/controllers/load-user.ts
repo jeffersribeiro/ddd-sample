@@ -1,4 +1,4 @@
-import { LoadUserUseCase } from "@domain/use-cases";
+import { LoadUserUseCase } from "@data/use-cases/user";
 import { HttpResponse, ok, serverError } from "@application/helpers/http";
 
 import { Controller } from "./controller";

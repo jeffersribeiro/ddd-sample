@@ -4,7 +4,9 @@ export interface LoadUser {
 
 export namespace LoadUser {
   export type Input = { email: string };
-  export type Ouptut = undefined | { id: number; name: string; email: string };
+  export type Ouptut =
+    | undefined
+    | { id: number; name: string; email: string; password: string };
 }
 
 export interface CreateUser {
