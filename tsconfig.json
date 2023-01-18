@@ -22,6 +22,7 @@
     "baseUrl": "src",
     "paths": {
       "@main/*": ["main/*"],
+      "@data/*": ["data/*"],
       "@infra/*": ["infra/*"],
       "@domain/*": ["domain/*"],
       "@application/*": ["application/*"]

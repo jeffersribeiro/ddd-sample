@@ -5,11 +5,11 @@ services:
     image: postgres
     restart: always
     ports:
-      - 5434:5432
+      - 5435:5432
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: my-secret-password
-      POSTGRES_DB: go-flux-sample
+      POSTGRES_DB: comeia-lab-sample
 
   adminer:
     image: adminer
