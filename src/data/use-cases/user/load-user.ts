@@ -1,4 +1,4 @@
-import { CreateUser, LoadUser } from "@domain/repos/user-repository";
+import { CreateUser, LoadUser } from "@domain/contracts/repos";
 
 type Setup = (userRepository: CreateUser & LoadUser) => LoadUserUseCase;
 type Input = { email: string };
